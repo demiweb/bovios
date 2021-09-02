@@ -97,15 +97,104 @@ function dontForgetOpen() {
 }
 dontForgetOpen();
 
-let animBlock = [...document.querySelectorAll('.js-anim')];
 
-function startAnim() {
-    if (!animBlock.length) {
-        animBlock.forEach((blc, k) => {
-            blc.classList.add('start');
-        })
+
+let bigRowSliders = [...document.querySelectorAll('.js-slider.production')];
+
+function startBigSlider() {
+    if (!bigRowSliders.length) {
+
     } else {
-
+        bigRowSliders.forEach((sld) => {
+            let sldCont = sld.querySelector('.production-container');
+            let sldNext = sld.querySelector('.button-slide--next');
+            let sldPrev = sld.querySelector('.button-slide--prev');
+            const swiper2 = new Swiper(sldCont, {
+                // Optional parameters
+                loop: false,
+                slidesPerView:'auto',
+                slidesPerGroup: 1,
+                navigation: {
+                    nextEl: sldNext,
+                    prevEl: sldPrev,
+                },
+            });
+        })
     }
 }
-startAnim();
+startBigSlider();
+
+let planetBtns = [...document.querySelectorAll('.planet-button')];
+let planetIcons = document.querySelector('.planet-icons');
+let singleIcons = [...document.querySelectorAll('.single-icon')];
+let startRotating = 0;
+function checkAngle(ang) {
+    console.log(ang);
+    if (ang > 0) {
+        console.log('1')
+        singleIcons.forEach((btn2, z) => {
+            btn2.classList.remove('active');
+            if (z < 3) {
+                btn2.classList.add('active');
+            }
+        });
+
+    } else if (ang === 0) {
+        console.log('2')
+
+        singleIcons.forEach((btn2, z) => {
+            btn2.classList.remove('active');
+            if (z > 2 && z < 6) {
+                btn2.classList.add('active');
+            }
+        });
+    } else {
+        console.log('3')
+        singleIcons.forEach((btn2, z) => {
+            btn2.classList.remove('active');
+            if (z > 5) {
+                btn2.classList.add('active');
+            }
+        });
+    }
+
+}
+function rotateFnc(dir) {
+    let angle = 90;
+    if (dir === 1) {
+        startRotating += angle;
+
+        if (startRotating > 90) {
+            startRotating = 90;
+        }
+        planetIcons.style.transform = `rotate(calc(${dir} * ${startRotating}deg))`;
+
+
+    } else {
+        startRotating = startRotating - angle;
+        if (startRotating < -90) {
+            startRotating = -90;
+        }
+        planetIcons.style.transform = `rotate(calc(${dir} * ${-startRotating}deg))`;
+
+    }
+    console.log(startRotating);
+    checkAngle(startRotating);
+}
+function rotatePlanet() {
+    if (!planetBtns.length) {
+
+    } else {
+        planetBtns.forEach((btn, k) => {
+            btn.addEventListener('click', () => {
+                if (btn.classList.contains('planet-button--0')) {
+                    rotateFnc(-1);
+                } else {
+                    rotateFnc(1);
+                }
+            })
+        })
+    }
+}
+
+rotatePlanet();
