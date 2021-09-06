@@ -178,6 +178,10 @@ function rotateFnc(dir) {
         planetIcons.style.transform = `rotate(calc(${dir} * ${-startRotating}deg))`;
 
     }
+    singleIcons.forEach((ci) => {
+        ci.classList.remove('open');
+    })
+
     console.log(startRotating);
     checkAngle(startRotating);
 }
@@ -192,6 +196,19 @@ function rotatePlanet() {
                 } else {
                     rotateFnc(1);
                 }
+            })
+        });
+        singleIcons.forEach((ic) => {
+            ic.querySelector('.square').addEventListener('click', () => {
+                console.log('click-sq')
+                singleIcons.forEach((ci) => {
+                    ci.classList.remove('open');
+                })
+                ic.classList.toggle('open');
+            });
+            ic.querySelector('.close-icon').addEventListener('click', () => {
+                ic.classList.remove('open');
+                console.log('close');
             })
         })
     }

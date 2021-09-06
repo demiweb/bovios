@@ -135,6 +135,16 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 1200px) {
+  .about-hero__text {
+    padding: 80px 0 120px;
+    .text {
+      max-width: 400px;
+      &::before {
+        width: 240px;
+        height: 198px;
+      }
+    }
+  }
   .production .button-slide {
     top: 36%;
   }
@@ -761,6 +771,29 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 769px) {
+  .about-hero__text {
+    padding: 20px 0 120px;
+    .text {
+      max-width: 360px;
+      &::before {
+        width: 160px;
+        height: 118px;
+      }
+    }
+  }
+  .about-hero {
+    .bg {
+      .left-hand {
+        top: 75%;
+        bottom: auto;
+      }
+      .right-hand {
+        top: 75%;
+        bottom: auto;
+      }
+    }
+  }
+
   .mission-buttons {
     flex-direction: column;
 
@@ -852,20 +885,71 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
     cursor: pointer;
     top: -100px;
   }
+
   .single-icon {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
+    .square {
+      &:hover {
+        .icon-hover {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+        & + .icon-hover {
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+        }
+      }
+    }
     &.active {
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
     }
+    &.open {
+      z-index: 2;
+      & > .icon-hover {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+      }
+    }
     transform: translate(0, -50%) rotate(calc(-60deg + (30deg * var(--i))));
 
     & > * {
       transform: rotate(calc((30deg + (30deg * var(--i)) * -1) + 30deg));
+
+    }
+    &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+      .square {
+        img {
+          transform: rotate(-90deg);
+        }
+
+      }
+      & >.icon-hover {
+        transform: translate(-50%, -50%) rotate(calc((270deg - (30deg * var(--i)) * 1) + 150deg)) rotate(-90deg);
+
+      }
+
+
+    }
+    &:nth-child(7), &:nth-child(8), &:nth-child(9) {
+      .square {
+        img {
+          transform: rotate(90deg);
+        }
+
+      }
+      & >.icon-hover {
+        transform: translate(-50%, -50%) rotate(calc((270deg - (30deg * var(--i)) * 1) + 150deg)) rotate(90deg);
+
+      }
+
     }
   }
   .planet-box {
@@ -874,19 +958,45 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
     margin-right: -5%;
     padding-top: 110%;
   }
+  .planet .bg {
+    width: 150%;
+    margin-left: -25%;
+    margin-right: -25%;
+  }
   .home-planet {
     overflow: hidden;
   }
   .icon-hover {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    .close-icon {
+      width: 16px;
+      height: 16px;
+      padding: 3px;
+      box-sizing: border-box;
+      top: 11px;
+      position: absolute;
+      right: 11px;
+      cursor: pointer;
+      img {
+        width: 10px;
+        height: 10px;
+      }
+    }
+    &::after {
+      content: none !important;
+    }
     right: auto;
     left: 100%;
     top: 50%;
-    transform: translate(-50%, -50%) rotate(calc((270deg - (34deg * var(--i)) * 1) + 171deg));
+    width: 140%;
+    transform: translate(-50%, -50%) rotate(calc((270deg - (30deg * var(--i)) * 1) + 150deg));
     &.desk-only {
-      //display: flex !important;
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
+      display: flex !important;
+      //opacity: 1;
+      //visibility: visible;
+      //pointer-events: auto;
 
     }
     &.mob-only {
@@ -1150,6 +1260,43 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 575px) {
+  .about-hero__text {
+    padding: 50px 0 90px;
+  }
+  .about-hero {
+    .bg {
+      .left-hand {
+        width: 70%;
+        top: 67%;
+        padding-top: 40%;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+      .right-hand {
+        width: 46%;
+        padding-top: 40%;
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+      }
+    }
+  }
+  .planet .bg {
+    width: 190%;
+    margin-left: -45%;
+    margin-right: -45%;
+  }
+  .icon-hover {
+    width: 120%;
+    padding: 40px 20px;
+    .btn {
+      width: 100%;
+    }
+  }
   .related-news__container .head {
     flex-direction: column;
     align-items: flex-start;
