@@ -21,6 +21,20 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 1600px) {
+
+  .our-trust__container {
+    .img {
+      width: 36%;
+      padding-top: 26%;
+    }
+  }
+  .trust-block {
+    margin-left: 33%;
+    padding: 80px 8%;
+    ol {
+      margin-top: 40px;
+    }
+  }
   .production {
     .button-slide {
       width: 82px;
@@ -51,6 +65,17 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
       line-height: 20px;
     }
   }
+  .slogan-list::after {
+    width: 18%;
+    padding-top: 18%;
+    right: 0;
+    left: auto;
+    transform: translate(0, -80%);
+  }
+  .slogan .text::after {
+
+    transform: translate(-50%, -100%);
+  }
 }
 
 @media screen and (max-width: 1460px) {
@@ -62,6 +87,16 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 1400px) {
+  .company-goal__container {
+    padding: 80px 0 80px;
+    .img {
+      width: 40%;
+      padding-left: 2%;
+    }
+  }
+  .company-goal__text {
+    width: 60%;
+  }
   .contact-us__container {
     p {
       font-size: 28px;
@@ -135,6 +170,55 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 1200px) {
+  .press-center__container {
+    .news {
+      row-gap: 60px;
+    }
+  }
+  .production-items {
+    padding: 60px 0;
+  }
+  .production-page .bg {
+    display: none;
+  }
+  .pagination {
+    margin-bottom: 60px;
+  }
+  .our-slogan {
+    background: url('../img/formula-2.png') no-repeat right center/180px;
+  }
+
+  .slogan {
+    .img {
+      width: 35%;
+      margin-top: 0;
+    }
+    .text {
+      width: 65%;
+    }
+  }
+  .our-slogan__container {
+    padding: 90px 0;
+  }
+  .company-goal__container {
+    padding: 80px 0 80px;
+    flex-direction: column;
+    .img {
+      width: 100%;
+      padding-left: 0;
+      margin-top: 30px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .company-goal__text {
+    width: 100%;
+    > p {
+      margin-bottom: 17px;
+    }
+
+  }
   .about-hero__text {
     padding: 80px 0 120px;
     .text {
@@ -501,6 +585,49 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 1024px) {
+  .hero {
+    min-height: 180px;
+  }
+  .hero-title {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .our-trust__container {
+    padding-top: 40%;
+    .img {
+      width: 56%;
+      padding-top: 41.5%;
+      left: 50%;
+      top: 50px;
+      transform: translate(-50%, 0);
+    }
+  }
+  .trust-block {
+    margin-left: 0;
+    padding: 85px 15px;
+  }
+  .our-slogan {
+    background: url('../img/formula-2.png') no-repeat right 40%/180px;
+  }
+  .slogan-list {
+    &::after {
+      content: none;
+    }
+  }
+  .single-slogan {
+    width: 45%;
+    margin-right: 10%;
+    &:nth-child(even) {
+      margin-right: 0;
+      margin-top: 0;
+    }
+  }
+  .photo-gallery {
+    padding: 60px 0;
+    background: url("../img/formula-2.png") no-repeat right top/ 180px, url("../img/formula-2.png") no-repeat -20px bottom/ 180px;
+
+  }
+
   .trust-text p {
     font-size: 14px;
     line-height: 21px;
@@ -636,6 +763,45 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 900px) {
+  .press-center__container {
+    padding-bottom: 80px;
+  }
+  .our-slogan {
+    background: url('../img/formula-2.png') no-repeat right 56%/180px;
+  }
+  .single-slogan blockquote {
+    padding-right: 0;
+  }
+  .single-slogan {
+    width: 48%;
+    margin-right: 4%;
+  }
+  .slogan-humans {
+    padding: 60px 0 0;
+  }
+  .slogan-list {
+    margin-top: 40px;
+  }
+  .slogan .text::after {
+    content: none;
+  }
+  .slogan {
+    flex-direction: column;
+    .text {
+      width: 100%;
+      padding: 0;
+    }
+    .img {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      img {
+        width: 70%;
+      }
+    }
+  }
   .production .button-slide {
     top: 29%;
   }
@@ -868,6 +1034,14 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 767px) {
+  .photo-gallery__container {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .gallery-column {
+    width: calc(50% - 5px);
+    flex-grow: 1;
+  }
   .planet {
     width: calc(100% + 40px);
     margin-left: -20px;
@@ -1128,6 +1302,65 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
   }
 }
 @media screen and (max-width: 650px) {
+
+  .single-press {
+    h1, h2, h3, h4, h5, h6 {
+      margin-bottom: 29px;
+    }
+    h1 {
+      font-size: 28px;
+      line-height: 28px;
+    }
+    h2, h3 {
+      font-size: 24px;
+      line-height: 28px;
+    }
+    h4, h5, h6 {
+      font-size: 20px;
+      line-height: 22px;
+    }
+    p, strong, i, a, ul li {
+      font-size: 16px;
+      line-height: 24px;
+    }
+    img {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    * {
+      text-align: justify;
+    }
+  }
+  .press-center__type ul {
+    li {
+      margin-right: 5%;
+      a {
+        font-size: 14px;
+        line-height: 19px;
+        padding-bottom: 12px;
+      }
+    }
+  }
+  .press-center__container {
+    .news {
+      row-gap: 50px;
+    }
+  }
+  .our-trust__container {
+    padding-top: 67%;
+    padding-bottom: 40px;
+    .img {
+      width: 100%;
+      padding-top: 69%;
+      left: 50%;
+      top: 50px;
+      transform: translate(-50%, 0);
+    }
+  }
+  .trust-block {
+    margin-left: 0;
+    padding: 85px 15px 50px;
+  }
   .production .button-slide {
     width: 55px;
   }
@@ -1209,6 +1442,11 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 610px) {
+  .hero-title {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
   .contact-us__container {
     padding: 73px 0 80px;
     flex-direction: column;
@@ -1260,6 +1498,44 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 575px) {
+  .pagination {
+    ul {
+      width: 100%;
+      justify-content: space-between;
+      li {
+        a {
+          &.prev {
+            margin-right:auto;
+          }
+          &.prev, &.next {
+            width: 55px;
+            height: 55px;
+            &::before {
+              width: 59px;
+              height: 59px;
+            }
+          }
+          &.next {
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+  .goal-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .single-goal {
+    width: 50%;
+    margin-right: 0;
+    padding: 16px;
+    box-sizing: border-box;
+    //margin-bottom: 14px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
   .about-hero__text {
     padding: 50px 0 90px;
   }
@@ -1372,7 +1648,38 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
     width: 50%;
   }
 }
+@media screen and (max-width: 525px) {
+  .trust-block {
+    ol {
+      li {
+        width: 100%;
+        &:nth-child(even) {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .slogan .img img {
+    width: 100%;
+  }
+  .our-slogan {
+    background: url('../img/formula-2.png') no-repeat right bottom/180px;
+  }
+  .single-slogan {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
 @media screen and (max-width: 374px) {
+  .gallery-column {
+    width: 100%;
+  }
   .footer__logo {
     flex-wrap: wrap;
     bottom: 20px;
@@ -1380,173 +1687,4 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
       margin-top: 14px;
     }
   }
-}
-.yellow-bus {
-  background: red;
-}
-
-.search-mar-icon {
-  width: 37px;
-  height: 37px;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 5px;
-
-  &.desk-only {
-    display: block;
-  }
-
-  &.mob-only {
-    display: none;
-  }
-}
-
-.search-mar-icon__icon {
-  width: 100%;
-  height: 100%;
-  background: #383838;
-  border-radius: 4px;
-  padding: 10px;
-  box-sizing: border-box;
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-
-}
-
-@media screen and (max-width: 768px) {
-  .search-mar-icon {
-    margin-left: auto;
-    margin-right: 20px;
-
-    &.desk-only {
-      display: none;
-    }
-
-    &.mob-only {
-      display: block;
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .mario-header__header-navigation .mario-header__site-language.mario-header__site-language {
-    display: none;
-  }
-}
-
-.search-mar__block {
-  z-index: 100;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  background: rgba(15, 15, 17, 0.5);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: visibility 0.3s ease, opacity 0.3s ease;
-
-  &.visible {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-  }
-
-}
-
-.search-mar__container {
-  width: 100%;
-  padding: 30px;
-  max-width: 1100px;
-  box-sizing: border-box;
-  position: relative;
-  margin-top: 160px;
-}
-
-.close-search-mar {
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  bottom: 100%;
-  margin-bottom: 0;
-  right: 0;
-  font-size: 35px;
-  color: white;
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
-.search-mar-field {
-  width: 100%;
-  position: relative;
-}
-
-#ajaxsearchlite1 .probox, div.asl_w .probox {
-  background: rgba(255, 255, 255, 0);
-  border-radius: 0;
-  border: none;
-  border-bottom: 2px solid white;
-  padding-bottom: 10px;
-}
-
-#ajaxsearchlite1 .probox .proinput input, div.asl_w .probox .proinput input {
-  font-family: Raleway, sans-serif;
-  font-size: 25px;
-  color: white !important;
-}
-
-#ajaxsearchlite1 .probox .proinput input::placeholder, div.asl_w .probox .proinput input::placeholder {
-  color: white !important;
-}
-
-div.asl_w .probox .promagnifier {
-  box-shadow: none;
-  width: 34px;
-  height: 34px;
-
-}
-
-div.asl_w .probox .promagnifier .innericon svg {
-  fill: white;
-}
-
-div.asl_r.vertical {
-  background: none;
-  box-shadow: none;
-}
-
-div.asl_r .results .item {
-  margin-bottom: 5px;
-  border-radius: 0 !important;
-}
-
-div.asl_r.asl_w.vertical .results .item::after {
-  content: none;
-}
-
-div.asl_r .results .item .asl_content {
-  padding: 8px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
-div.asl_r .results .item .asl_content h3, div.asl_r .results .item .asl_content h3 a {
-  font-family: 'Raleway', sans-serif;
-  font-size: 18px;
-  color: #444444;
-  margin-left: 20px;
 }
