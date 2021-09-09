@@ -215,3 +215,19 @@ function rotatePlanet() {
 }
 
 rotatePlanet();
+
+let vacancyHead = [...document.querySelectorAll('.vacancy-head')];
+
+function openVacancyText() {
+    if (!vacancyHead.length) {
+
+    } else {
+        vacancyHead.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                btn.closest('.vacancy').classList.toggle('open');
+            })
+        })
+    }
+}
+
+openVacancyText();
