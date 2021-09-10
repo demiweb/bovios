@@ -231,3 +231,107 @@ function openVacancyText() {
 }
 
 openVacancyText();
+
+
+let quantButton = [...document.querySelectorAll('.quantity__button')];
+
+
+function upValueQuant() {
+    if (!quantButton.length) {
+
+    } else {
+        quantButton.forEach((btn) => {
+            btn.querySelector('button').addEventListener('click', () => {
+                if (btn.classList.contains('quantity__button--minus')) {
+                    let val =  btn.closest('.quantity-field').querySelector('.quantity input').value;
+                    if (Number(val) === 0) {
+
+                    } else {
+                        let newVal =    Number(val) - 1;
+                        btn.closest('.quantity-field').querySelector('.quantity input').value = newVal;
+                    }
+
+
+                } else {
+                    let val =  btn.closest('.quantity-field').querySelector('.quantity input').value;
+
+                    let newVal =    Number(val) + 1;
+                    btn.closest('.quantity-field').querySelector('.quantity input').value = newVal;
+
+                }
+            })
+        })
+    }
+}
+upValueQuant();
+
+
+$('.sort-select').niceSelect();
+
+let sortUlLi = [...document.querySelectorAll('.sort-select ul li')];
+
+function sortSelectClick() {
+    if (!sortUlLi.length) {
+
+    } else {
+        sortUlLi.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                let optValue = btn.dataset.value;
+                let event2 = new Event('change');
+                let event3 = new Event('click');
+                let event4 = new Event('change');
+                let suggestOpt = document.querySelector(`option[value='${optValue}']`);
+                // btn.closest('.sort-selector').querySelector('select option[selected]').removeAttribute('selected');
+
+                suggestOpt.selected = 'selected';
+                suggestOpt.setAttribute('selected', 'selected');
+                suggestOpt.click();
+                // console.log(btn.closest('.sort-selector').querySelector('select'));
+                // console.log(suggestOpt);
+                // $('select.sort-select').niceSelect();
+            })
+        })
+    }
+}
+sortSelectClick();
+
+
+$('.rating-stars').raty(
+    {
+        readOnly:   true,
+        starHalf: '../img/star-clear.svg',
+        starOn: '../img/star.svg',
+        starOff: '..img/star-clear.svg',
+        hints: ['a', null, '', null, '', null]
+    }
+);
+
+let prodTabs = [...document.querySelectorAll('.product-tabs > div')];
+let prodTabsCont = [...document.querySelectorAll('.prod-tab')];
+
+function changeOpenTab() {
+    if (!prodTabs.length) {
+
+    } else {
+        prodTabs.forEach((tab, k) => {
+            tab.addEventListener('click', () => {
+                if (tab.classList.contains('active')) {
+
+                } else {
+                    prodTabs.forEach((btn) => {
+                        btn.classList.remove('active');
+                    });
+                    prodTabsCont.forEach((t, l) => {
+                        t.classList.remove('active');
+                        if (l === k) {
+                            t.classList.add('active');
+                        }
+                    })
+                    tab.classList.add('active');
+                }
+            })
+        })
+    }
+}
+
+changeOpenTab();
