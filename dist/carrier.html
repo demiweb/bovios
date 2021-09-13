@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/main.min.css">
 </head>
 <body>
-<header class="header">
+<header class="header js-anim">
     <div class="header-top">
         <div class="container">
             <div class="header-container">
@@ -157,7 +157,7 @@
                 <p>Якщо ти цілеспрямований, готовий вчитися та плідно працювати — ми радо запропонуємо таку можливість.
                 </p>
                 <p> Розкрий свій потенціал у нашій команді — ми не ставимо меж твоєму розвитку.</p>
-                <a href="#" class="btn btn--white">Переглянути вакансії</a>
+                <a href="#" class="btn btn--white btn-go-down">Переглянути вакансії</a>
             </div>
 
         </div>
@@ -484,16 +484,16 @@
     </section>
 </main>
 
-<section class="contact-us">
+<section class="contact-us js-anim fade-op">
     <div class="container">
         <div class="contact-us__container">
             <p>Зв’яжіться з нами</p>
             <span>Зв'яжіться з представником компанії для отримання додаткової інформації про те, як BoViOS Farm може забезпечити Ваш бізнес повним пакетом рішень.</span>
-            <a href="#" class="btn btn--white">Зв’язатися з нами</a>
+            <a href="#" class="btn btn--white pop-req">Зв’язатися з нами</a>
         </div>
     </div>
 </section>
-<footer class="footer">
+<footer class="footer js-anim fade-roll">
     <div class="container">
         <div class="footer-top">
             <div class="footer__logo">
@@ -549,8 +549,11 @@
     </div>
 </footer>
 
-<div class="modal-window modal-window__request ">
+<div class="modal-window modal-window__request">
     <div class="modal-container">
+        <div class="close-modal">
+            <img src="./img/cancel-xmark.svg" alt="">
+        </div>
         <p class="title">
             Залиште заявку
         </p>
@@ -566,8 +569,12 @@
         </div>
 
     </div>
-</div><div class="modal-window modal-window__call ">
+</div>
+<div class="modal-window modal-window__call ">
     <div class="modal-container">
+        <div class="close-modal">
+            <img src="./img/cancel-xmark.svg" alt="">
+        </div>
         <p class="title">
             Зв’яжіться з нами
         </p>

@@ -56,6 +56,152 @@ function allLozadImg() {
 allLozadImg();
 
 
+
+//animations scroll
+
+
+
+
+
+let jsAnimBlocks = [...document.querySelectorAll('.js-anim')];
+var Visible3 = function (target) {
+    if (!jsAnimBlocks.length) {
+
+    } else {
+
+        var targetPosition = {
+                top: window.pageYOffset + target.getBoundingClientRect().top,
+                left: window.pageXOffset + target.getBoundingClientRect().left,
+                right: window.pageXOffset + target.getBoundingClientRect().right,
+                bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+            },
+            // Получаем позиции окна
+            windowPosition = {
+                top: window.pageYOffset + 80,
+                left: window.pageXOffset,
+                right: window.pageXOffset + document.documentElement.clientWidth,
+                bottom: window.pageYOffset + document.documentElement.clientHeight
+            };
+
+        if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+            targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+            targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+            targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+            // Если элемент полностью видно, то запускаем следующий код
+            setTimeout(() => {
+                target.classList.add('anim-start');
+            }, 300)
+
+
+        } else {
+            // Если элемент не видно, то запускаем этот код
+            // document.querySelector('.mobile-header-contacts').classList.remove('unvisible');
+        };
+    }
+    // Все позиции элемента
+
+};
+
+
+// Запускаем функцию при прокрутке страницы
+window.addEventListener('scroll', function () {
+    jsAnimBlocks.forEach((el) => {
+        Visible3(el);
+    })
+
+});
+
+// А также запустим функцию сразу. А то вдруг, элемент изначально видно
+
+jsAnimBlocks.forEach((el) => {
+    Visible3(el);
+});
+
+
+let jsAnimPlanet = [...document.querySelectorAll('.planet .js-ani')];
+var Visible4 = function (target) {
+    if (!jsAnimPlanet.length) {
+
+    } else {
+
+        var targetPosition = {
+                top: window.pageYOffset + target.getBoundingClientRect().top,
+                left: window.pageXOffset + target.getBoundingClientRect().left,
+                right: window.pageXOffset + target.getBoundingClientRect().right,
+                bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+            },
+            // Получаем позиции окна
+            windowPosition = {
+                top: window.pageYOffset + 80,
+                left: window.pageXOffset,
+                right: window.pageXOffset + document.documentElement.clientWidth,
+                bottom: window.pageYOffset + document.documentElement.clientHeight
+            };
+
+        if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+            targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+            targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+            targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+            // Если элемент полностью видно, то запускаем следующий код
+            setTimeout(() => {
+                target.classList.add('anim-start');
+            }, 300)
+
+
+        } else {
+            // Если элемент не видно, то запускаем этот код
+            // document.querySelector('.mobile-header-contacts').classList.remove('unvisible');
+        };
+    }
+    // Все позиции элемента
+
+};
+
+
+// Запускаем функцию при прокрутке страницы
+window.addEventListener('scroll', function () {
+    jsAnimPlanet.forEach((el, k) => {
+        setTimeout(() => {
+            Visible4(el);
+        }, k * 100)
+
+    });
+    parallaxImg();
+
+});
+
+// А также запустим функцию сразу. А то вдруг, элемент изначально видно
+
+jsAnimPlanet.forEach((el, k) => {
+    setTimeout(() => {
+        Visible4(el);
+    }, k * 100)
+});
+
+let imgPar = [...document.querySelectorAll('.mission-bg > div:not(.js-anim)')];
+function parallaxImg() {
+    imgPar.forEach((img) => {
+        let spaceBellow = window.innerHeight - img.getBoundingClientRect().bottom + img.offsetHeight;
+
+        let topDistance = img.getBoundingClientRect().top;
+
+        let imgHeight = img.offsetHeight;
+
+        let percent = spaceBellow / 9;
+
+        if (0 < spaceBellow && topDistance > 0) {
+            // console.log('picture visible')
+
+            img.style.transform = `translate(0, ${-percent}%)`
+        }
+
+    })
+}
+window.addEventListener('load', () => {
+    parallaxImg();
+});
+//animations scroll
+
 let burger = document.querySelector('.burger');
 
 function openMenu() {
@@ -335,3 +481,98 @@ function changeOpenTab() {
 }
 
 changeOpenTab();
+
+let modalWindows = [...document.querySelectorAll('.modal-window')];
+
+function modalControl() {
+    if (!modalWindows.length) {
+
+    } else {
+        modalWindows.forEach((mdl, k) => {
+            mdl.addEventListener('click', () => {
+                document.body.classList.remove('no-scroll');
+                mdl.classList.remove('open');
+            });
+            mdl.querySelector('.modal-container').addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+            mdl.querySelector('.close-modal').addEventListener('click', () => {
+                mdl.classList.remove('open');
+                document.body.classList.remove('no-scroll');
+            })
+        })
+    }
+}
+
+modalControl();
+
+
+$(".btn-go-down").click(function(e) {
+    e.preventDefault();
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".vacancies").offset().top - 100
+    }, 500);
+});
+
+let popupCarrier = [...document.querySelectorAll('.pop-carrier')];
+
+function openPopups() {
+    if (!popupCarrier.length) {
+
+    } else {
+        popupCarrier.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                document.querySelector('.modal-window__request').classList.add('open');
+                document.body.classList.add('no-scroll');
+            })
+        })
+    }
+}
+
+openPopups();
+let popupReq = [...document.querySelectorAll('.pop-req')];
+
+function openPopupsReq() {
+    if (!popupReq.length) {
+
+    } else {
+        popupReq.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.querySelector('.modal-window__call').classList.add('open');
+                document.body.classList.add('no-scroll');
+            })
+        })
+    }
+}
+
+openPopupsReq();
+
+let blobHove = [...document.querySelectorAll('.blob')];
+
+function hoverBlob() {
+    if (!blobHove.length) {
+
+    } else {
+        let princImg = [...document.querySelectorAll('.principles__image')];
+        blobHove.forEach((bl, k) => {
+            bl.addEventListener('mouseover', () => {
+                if (bl.classList.contains('active')) {
+
+                } else {
+                    blobHove.forEach((blb) => {
+                        blb.classList.remove('active')
+                    });
+                    bl.classList.add('active');
+                    princImg.forEach((img) => {
+                        img.classList.remove('active');
+                    });
+                    princImg[k].classList.add('active');
+                }
+            });
+
+        })
+    }
+}
+
+hoverBlob();
