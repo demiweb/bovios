@@ -133,16 +133,15 @@
             <ul class="breadcrumbs">
                 <li><a href="">Головна</a></li>
                 <li><a href="">Продукція</a></li>
-
                 <li><span>Венолія</span></li>
             </ul>
             <div class="product-container">
 
-                <div class="product-img">
-                    <div class="img">
+                <div class="product-img ">
+                    <div class="img js-anim fade-slow">
                         <img class="lazyload" data-src="./img/venol-1.png" alt="">
                     </div>
-                    <div class="card-pos">
+                    <div class="card-pos js-anim fade-right">
                         <div class="card-pos__single">
                             <div class="img">
                                 <img src="./img/cr-i-1.svg" alt="">
@@ -169,7 +168,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="product-info">
+                <div class="product-info js-anim fade-left">
                     <div class="product-code">
                         Код товару: <p>BH5486</p>
                     </div>
@@ -180,7 +179,7 @@
                     </div>
 
                     <div class="product-rev">
-                        <div class="product-price"><p>190 грн</p></div>
+                        <div class="product-price"><p>190 грн <strong>260 грн</strong></p></div>
                         <div class="product__rating">
                             <div class="rating-stars" data-score="4.5"></div>
                             <a href="#">19 відгуків</a>
@@ -223,19 +222,42 @@
             </div>
             <div class="product-tabs">
                 <div>Про препарат</div>
-                <div class="active">Рекомендації до застосування</div>
+                <div>Рекомендації до застосування</div>
                 <div>Оплата та доставка</div>
                 <div>Гарантія</div>
                 <div>Популярні питання</div>
-                <div>Відгуки</div>
+                <div class="active">Відгуки</div>
             </div>
         </div>
     </section>
     <section class="product-content-tabs">
         <div class="container">
             <div class="product-content-tabs__container">
-                <div class="prod-tab"></div>
-                <div class="prod-tab active">
+                <div class="prod-tab">
+                    <span>Рекомендації до застосування:</span>
+                    <p>Може бути рекомендована як джерело біологічно активних речовин. Сприяє нормалізації
+                        функціонування судин, попередження та зменшення венозної недостатності різного походження.
+                    </p>
+                    <span>Поради:</span>
+                    <p>Перед застосуванням рекомендована консультація лікаря.</p>
+
+                    <span>Термін застосування:</span>
+                    <p>2-3 місяці. В подальшому курс прийому узгоджувати з лікарем.</p>
+                    <ul>
+                        <li>Lorem ipsum dolor sit amet, Ab, adipisci beatae, corporis deserunt eaque eius error esse
+                            fugit ipsa laborum laudantium numquam porro, !
+                        </li>
+                        <li>repellendus sed sint suscipit tempore vel vitae</li>
+                        <li>consectetur adipisicing elit.</li>
+                    </ul>
+                    <ol>
+                        <li>Поради:</li>
+                        <li>Поради:</li>
+                        <li>Поради:</li>
+                        <li>Поради:</li>
+                    </ol>
+                </div>
+                <div class="prod-tab ">
                     <div>
                         <span>Рекомендації до застосування:</span>
                         <p>Може бути рекомендована як джерело біологічно активних речовин. Сприяє нормалізації
@@ -257,8 +279,35 @@
 
                 </div>
                 <div class="prod-tab"></div>
-                <div class="prod-tab"></div>
-                <div class="prod-tab"></div>
+                <div class="prod-tab">
+                    <div class="reviews">
+                        <div class="reviews-list">
+                            <div class="no-reviews">
+                                <p>Немає відгуків</p>
+                                <span>Ви можете залишити відгук першим</span>
+                            </div>
+                        </div>
+                        <div class="left-review"></div>
+                    </div>
+                </div>
+                <div class="prod-tab active">
+                    <div class="reviews">
+                        <div class="reviews-list">
+                            <div class="reviews-list__head">
+                                <p class="title">Відгуки</p>
+                                <span>На товар *назва товару*</span>
+                            </div>
+
+                            <div class="reviews-content">
+                                <p>sadasd</p>
+                                <span>sadasda</span>
+
+                            </div>
+
+                        </div>
+                        <div class="left-review"></div>
+                    </div>
+                </div>
 
 
             </div>
@@ -373,6 +422,122 @@
                 <button type="button" class="btn btn--green">Надіслати</button>
             </form>
         </div>
+
+    </div>
+</div>
+<div class="modal-window modal-window__one ">
+    <div class="modal-container">
+        <div class="close-modal">
+            <img src="./img/cancel-xmark.svg" alt="">
+        </div>
+        <p class="title">
+            Замовити в 1 клік
+        </p>
+        <div class="form">
+            <form action="">
+                <label for=""></label>
+
+                <input type="text" placeholder="+38 (_ _ _) _ _ _ - _ _ - _ _">
+                <button type="button" class="btn btn--green">Надіслати</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+<div class="modal-window modal-window__cart ">
+    <div class="modal-container">
+        <div class="close-modal">
+            <img src="./img/cancel-xmark.svg" alt="">
+        </div>
+        <p class="title">
+            Ваш кошик
+        </p>
+
+        <div class="modal-cart">
+            <div class="modal-cart__content">
+                <div class="cart-line">
+                    <div class="cart-item">
+                        <a href="#" class="cart-name">
+                            <div class="img">
+                                <img src="./img/img-crt-1.jpg" alt="">
+                            </div>
+                            <div class="text">
+                                <p>Альфаполістатин</p>
+                                <span>60 табл.</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cart-item"><p><bdi>Ціна: </bdi> 190 грн</p></div>
+                    <div class="cart-item">
+                        <bdi>Кількість:</bdi>
+                        <div class="quantity-field">
+                            <div class="quantity__button quantity__button--minus">
+                                <button>-</button>
+                            </div>
+                            <div class="quantity">
+                                <label for=""></label>
+                                <input type="number" name="
+" value="1" min="0" step="1" size="1" class="form-control">
+                            </div>
+                            <div class="quantity__button quantity__button--plus">
+                                <button>+</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="cart-item">
+                        <button class="remove-it"><img src="./img/rem-it-ic.svg" alt="">Видалити</button>
+                    </div>
+
+                </div>
+                <div class="cart-line">
+                    <div class="cart-item">
+                        <a href="#" class="cart-name">
+                            <div class="img">
+                                <img src="./img/img-crt-1.jpg" alt="">
+                            </div>
+                            <div class="text">
+                                <p>Альфаполістатин</p>
+                                <span>60 табл.</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="cart-item"><p><bdi>Ціна: </bdi> 190 грн</p></div>
+                    <div class="cart-item">
+                        <bdi>Кількість:</bdi>
+                        <div class="quantity-field">
+                            <div class="quantity__button quantity__button--minus">
+                                <button>-</button>
+                            </div>
+                            <div class="quantity">
+                                <label for=""></label>
+                                <input type="number" name="
+" value="1" min="0" step="1" size="1" class="form-control">
+                            </div>
+                            <div class="quantity__button quantity__button--plus">
+                                <button>+</button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="cart-item">
+                        <button class="remove-it"><img src="./img/rem-it-ic.svg" alt="">Видалити</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="modal-footer">
+                <div class="modal-total">
+                    <p>Всього: <strong>999 грн</strong></p>
+                </div>
+                <a href="#" class="btn btn--green">Оформити замовлення</a>
+
+            </div>
+
+        </div>
+
 
     </div>
 </div>
