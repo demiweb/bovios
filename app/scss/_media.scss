@@ -7,6 +7,21 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
       transition: transform 0.4s ease;
 
     }
+    &.fade-left-long {
+      transform: translate(-90%, 0);
+      transition: transform 1.2s ease;
+      &.anim-start {
+        transform: translate(0, 0);
+      }
+    }
+    &.fade-right-long {
+      transform: translate(90%, 0);
+      transition: transform 1.2s ease;
+      &.anim-start {
+        transform: translate(0, 0);
+      }
+    }
+
     &.anim-start {
       .header-top {
         transform: translate(0, 0);
@@ -95,6 +110,7 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
         opacity: 1;
       }
     }
+
     &.fade-cir {
       transform: rotate(-180deg);
       transition: transform 1.8s ease;

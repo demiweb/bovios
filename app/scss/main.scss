@@ -838,7 +838,7 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
   overflow: hidden;
   border-radius: 100px 6px 60px;
 
-  img {
+  img, video, iframe {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -5959,7 +5959,7 @@ input[type=number] {
     background: #000;
     position: absolute;
     display: inline-block;
-    content: '';
+    //content: '';
   }
 
   overflow: hidden;
