@@ -172,6 +172,7 @@ window.addEventListener('scroll', function () {
     });
     parallaxImg();
     parallaxAfter();
+    parallaxList();
 
 });
 
@@ -184,6 +185,7 @@ jsAnimPlanet.forEach((el, k) => {
 });
 
 let imgPar = [...document.querySelectorAll('.mission-bg > div:not(.js-anim)')];
+let imgList = [...document.querySelectorAll('.product .bg .list')];
 function parallaxImg() {
     imgPar.forEach((img) => {
         let spaceBellow = window.innerHeight - img.getBoundingClientRect().bottom + img.offsetHeight;
@@ -202,7 +204,30 @@ function parallaxImg() {
 
     })
 }
+function parallaxList() {
+    imgList.forEach((img, z) => {
+        let spaceBellow = window.innerHeight - img.getBoundingClientRect().top + img.offsetHeight;
 
+        let topDistance = img.getBoundingClientRect().top;
+
+        let imgHeight = img.offsetHeight;
+
+        let percent = (((spaceBellow - imgHeight) / 3) - 60);
+
+        if (0 < spaceBellow && topDistance > 0) {
+            // console.log('picture visible')
+            console.log(window.innerHeight + ' ==== ' + img.getBoundingClientRect().top + ' !!!! ' + spaceBellow + ' ____ ' + imgHeight);
+            if (z%2===0) {
+
+            } else {
+                percent = percent * (-0.9);
+            }
+
+            img.style.transform = `translate(0, ${percent}%)`
+        }
+
+    })
+}
 let colorAfterPar = document.querySelector('.slogan .text .bg');
 
 function parallaxAfter() {
@@ -231,6 +256,7 @@ function parallaxAfter() {
 window.addEventListener('load', () => {
     parallaxImg();
     parallaxAfter();
+    parallaxList();
 });
 //animations scroll
 
@@ -337,21 +363,31 @@ function checkAngle(ang) {
     }
 
 }
-function rotateFnc(dir) {
+function rotateFnc(dir, k) {
     let angle = 90;
+    planetBtns.forEach((btns) => {
+        btns.classList.remove('disabled');
+    });
     if (dir === 1) {
         startRotating += angle;
 
-        if (startRotating > 90) {
+        if (startRotating >= 90) {
             startRotating = 90;
+            planetBtns.forEach((btns) => {
+                btns.classList.remove('disabled');
+            });
+            planetBtns[k].classList.add('disabled');
+
         }
         planetIcons.style.transform = `rotate(calc(${dir} * ${startRotating}deg))`;
 
 
     } else {
         startRotating = startRotating - angle;
-        if (startRotating < -90) {
+        if (startRotating <= -90) {
             startRotating = -90;
+
+            planetBtns[k].classList.add('disabled');
         }
         planetIcons.style.transform = `rotate(calc(${dir} * ${-startRotating}deg))`;
 
@@ -370,9 +406,9 @@ function rotatePlanet() {
         planetBtns.forEach((btn, k) => {
             btn.addEventListener('click', () => {
                 if (btn.classList.contains('planet-button--0')) {
-                    rotateFnc(-1);
+                    rotateFnc(-1, k);
                 } else {
-                    rotateFnc(1);
+                    rotateFnc(1, k);
                 }
             })
         });
@@ -403,6 +439,14 @@ function openVacancyText() {
         vacancyHead.forEach((btn) => {
             btn.addEventListener('click', () => {
                 btn.closest('.vacancy').classList.toggle('open');
+                let moreInfo = btn.querySelector('.more-info');
+                if (btn.closest('.vacancy').classList.contains('open')) {
+
+                    moreInfo.innerHTML = moreInfo.dataset.hidden;
+                } else {
+                    moreInfo.innerHTML = moreInfo.dataset.open;
+
+                }
             })
         })
     }
@@ -692,4 +736,267 @@ function openCartModal() {
 
 openCartModal();
 
+
+let startsRateModal = [...document.querySelectorAll('.rate-stars .rate')];
+
+function hoverStarsRate() {
+    if (!startsRateModal.length) {
+
+    } else {
+        startsRateModal.forEach((st, k) => {
+            let number = k + 1;
+            st.addEventListener('mouseover', () => {
+                st.classList.add('hover');
+                for (let i = 0; i < k; i++) {
+                    startsRateModal[i].classList.add('hover');
+                }
+            })
+            st.addEventListener('mouseout', () => {
+                st.classList.remove('hover');
+                for (let i = 0; i < k; i++) {
+                    startsRateModal[i].classList.remove('hover');
+                }
+            })
+            st.addEventListener('click', () => {
+                startsRateModal.forEach((st2) => {
+                    st2.classList.remove('clicked');
+                })
+                st.classList.add('clicked');
+                st.closest('.rate-list').querySelector('p strong').innerHTML = number;
+                for (let i = 0; i < k; i++) {
+                    startsRateModal[i].classList.add('clicked');
+                }
+            })
+        })
+    }
+}
+
+hoverStarsRate();
+
+
+
+let prodRatingOpen = [...document.querySelectorAll('.product__rating a')];
+
+function scrollToRate() {
+    if (!prodRatingOpen.length) {
+
+    } else {
+        prodRatingOpen.forEach((btn) => {
+            $(btn).click(function(e) {
+                e.preventDefault();
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(".rev-tab").offset().top
+                }, 400);
+                $(".rev-tab").click();
+            });
+        })
+    }
+}
+
+scrollToRate();
+
+let openSingleFaq = [...document.querySelectorAll('.single-faq > span')];
+
+function openFaqProd() {
+    if (!openSingleFaq.length) {
+
+    } else {
+        openSingleFaq.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                btn.closest('.single-faq').classList.toggle('open');
+            })
+        })
+    }
+}
+openFaqProd();
+
+
+
+
+
+let iAnimBlocks = [...document.querySelectorAll('.i-anim')];
+var Visible5 = function (target) {
+    if (!jsAnimBlocks.length) {
+
+    } else {
+
+        var targetPosition = {
+                top: window.pageYOffset + target.getBoundingClientRect().top,
+                left: window.pageXOffset + target.getBoundingClientRect().left,
+                right: window.pageXOffset + target.getBoundingClientRect().right,
+                bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+            },
+            // Получаем позиции окна
+            windowPosition = {
+                top: window.pageYOffset + 40,
+                left: window.pageXOffset,
+                right: window.pageXOffset + document.documentElement.clientWidth,
+                bottom: window.pageYOffset + document.documentElement.clientHeight
+            };
+
+        if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+            targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+            targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+            targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+            // Если элемент полностью видно, то запускаем следующий код
+            setTimeout(() => {
+                target.classList.add('animed');
+            }, 300)
+
+
+        } else {
+            // Если элемент не видно, то запускаем этот код
+            // document.querySelector('.mobile-header-contacts').classList.remove('unvisible');
+        }
+    }
+    // Все позиции элемента
+
+};
+
+
+// Запускаем функцию при прокрутке страницы
+window.addEventListener('scroll', function () {
+    iAnimBlocks.forEach((el, k) => {
+        setTimeout(() => {
+            Visible5(el);
+        }, k * 70)
+    })
+
+});
+
+// А также запустим функцию сразу. А то вдруг, элемент изначально видно
+
+iAnimBlocks.forEach((el, k) => {
+    setTimeout(() => {
+        Visible5(el);
+    }, k * 60)
+});
+
+
+//counting animation
+
+
+function animateValue(id, start, end, duration) {
+    // assumes integer values for start and end
+
+    var obj = id;
+    var range = end - start;
+    // no timer shorter than 50ms (not really visible any way)
+    var minTimer = 50;
+    // calc step time to show all interediate values
+    var stepTime = Math.abs(Math.floor(duration / range));
+
+    // never go below minTimer
+    stepTime = Math.max(stepTime, minTimer);
+
+    // get current time and calculate desired end time
+    var startTime = new Date().getTime();
+    var endTime = startTime + duration;
+    var timer;
+
+    function run() {
+        var now = new Date().getTime();
+        var remaining = Math.max((endTime - now) / duration, 0);
+        var value = Math.round(end - (remaining * range));
+        obj.innerHTML = value;
+        if (value == end) {
+            clearInterval(timer);
+        }
+    }
+
+    timer = setInterval(run, stepTime);
+    run();
+}
+
+// animateValue("value", 100, 25, 5000);
+
+
+let trustAn = [...document.querySelectorAll('.trust-single p')];
+
+let timedTime = 1;
+
+
+var Visible6 = function (target, dur) {
+    if (!trustAn.length) {
+
+    } else {
+
+        var targetPosition = {
+                top: window.pageYOffset + target.getBoundingClientRect().top,
+                left: window.pageXOffset + target.getBoundingClientRect().left,
+                right: window.pageXOffset + target.getBoundingClientRect().right,
+                bottom: window.pageYOffset + target.getBoundingClientRect().bottom
+            },
+            // Получаем позиции окна
+            windowPosition = {
+                top: window.pageYOffset + 40,
+                left: window.pageXOffset,
+                right: window.pageXOffset + document.documentElement.clientWidth,
+                bottom: window.pageYOffset + document.documentElement.clientHeight
+            };
+
+        if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+            targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+            targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+            targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+            // Если элемент полностью видно, то запускаем следующий код
+
+                let end = Number(target.dataset.time);
+                animateValue(target, 0, end, dur);
+                timedTime = 0;
+
+
+        } else {
+            // Если элемент не видно, то запускаем этот код
+            // document.querySelector('.mobile-header-contacts').classList.remove('unvisible');
+        }
+    }
+    // Все позиции элемента
+
+};
+
+
+// Запускаем функцию при прокрутке страницы
+window.addEventListener('scroll', function () {
+    if (timedTime === 0) {
+
+    } else {
+        trustAn.forEach((el, k) => {
+            setTimeout(() => {
+                let dur = 0;
+                if (k === 0) {
+                    dur = 2000
+                } else if (k === 1) {
+                    dur = 3600
+                } else {
+                    dur = 2600
+                }
+                Visible6(el, dur);
+            }, 300)
+        })
+    }
+
+
+});
+
+// А также запустим функцию сразу. А то вдруг, элемент изначально видно
+trustAn.forEach((el, k) => {
+    if (timedTime === 0) {
+
+    } else {
+        trustAn.forEach((el, k) => {
+            setTimeout(() => {
+                let dur = 0;
+                if (k === 0) {
+                    dur = 2000
+                } else if (k === 1) {
+                    dur = 3600
+                } else {
+                    dur = 2600
+                }
+                Visible6(el, dur);
+            }, 300)
+        })
+    }
+});
 

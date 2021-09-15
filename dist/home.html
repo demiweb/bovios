@@ -7,12 +7,11 @@
     <!-- <link rel="stylesheet" href="css/animate.css"/> -->
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" media="all" href="./libs/slick.css">
     <link rel="stylesheet" media="all" href="./libs/swiper.min.css">
     <link rel="stylesheet" href="./css/main.min.css">
 </head>
 <body>
-<header class="header js-anim">
+<header class="header ">
     <div class="header-top">
         <div class="container">
             <div class="header-container">
@@ -23,7 +22,8 @@
                 </div>
                 <div class="header-center">
                     <ul>
-                        <li><a href="">про компанію</a></li>
+                        <li><a href="">про нас</a></li>
+                        <li><a href="">Системи</a></li>
                         <li><a href="">ПРОДУКЦІЯ</a></li>
                         <li><a href="">ПРЕС-ЦЕНТР</a></li>
                         <li><a href="">КАР'ЄРА</a></li>
@@ -98,7 +98,8 @@
         </div>
         <div class="header-menu__content">
             <ul>
-                <li><a href="#">про компанію</a></li>
+                <li><a href="#">про нас</a></li>
+                <li><a href="#">Системи</a></li>
                 <li><a href="#">ПРОДУКЦІЯ</a></li>
                 <li><a href="#">ПРЕС-ЦЕНТР</a></li>
                 <li><a href="#">КАР'ЄРА</a></li>
@@ -351,7 +352,7 @@
             <div class="trust-us__container">
                 <div class="trust-img js-anim fade-left">
 <!--                    <img class="lazyload" data-src="./img/trust-us-img.jpg" alt="">-->
-                    <video  style="width: 100%; height: 100%; object-fit: cover; z-index: 0"  src="./img/video-prev.mp4"
+                    <video  style="width: 100%; height: 100%; object-fit: cover; z-index: 0"  src="./img/pexels-artem-podrez-5752729.mp4"
                             muted=""
                             autoplay="" loop="" playsinline="" type="video/mp4" poster="" data-loaded="true"></video>
                 </div>
@@ -363,16 +364,16 @@
 
                     <div class="trust-stat js-anim fade-top">
                         <div class="trust-single">
-                            <p>13</p>
+                            <p data-time="13">13</p>
                             <span>Високоякісних
 продуктів</span>
                         </div>
                         <div class="trust-single">
-                            <p>63</p>
+                            <p data-time="63">63</p>
                             <span>Висококваліфікованих спеціалістів</span>
                         </div>
                         <div class="trust-single">
-                            <p>4</p>
+                            <p data-time="4">4</p>
                             <span>Роки на ринку</span>
                         </div>
 
@@ -402,30 +403,30 @@
                                     <li>Як джерело біологічно активних речовин.</li>
                                 </ul>
                                 <div class="card-pos">
-                                    <div class="card-pos__single">
+                                    <a href="#" class="card-pos__single">
                                         <div class="img">
                                             <img src="./img/cr-i-1.svg" alt="">
                                         </div>
                                         <p>Травнева система</p>
-                                    </div>
-                                    <div class="card-pos__single">
+                                    </a>
+                                    <a href="#" class="card-pos__single">
                                         <div class="img">
                                             <img src="./img/cr-i-2.svg" alt="">
                                         </div>
                                         <p>Видільна система</p>
-                                    </div>
-                                    <div class="card-pos__single">
+                                    </a>
+                                    <a href="#" class="card-pos__single">
                                         <div class="img">
                                             <img src="./img/cr-i-3.svg" alt="">
                                         </div>
                                         <p> Нервова система</p>
-                                    </div>
-                                    <div class="card-pos__single">
+                                    </a>
+                                    <a href="#" class="card-pos__single">
                                         <div class="img">
                                             <img src="./img/cr-i-4.svg" alt="">
                                         </div>
                                         <p> Нервова система</p>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                             <div class="card__center">
@@ -843,7 +844,7 @@
         </div>
     </section>
 </main>
-<section class="home-dont-forget">
+<section class="home-dont-forget visible">
     <div class="dont-forget-btn">Не пропусти</div>
     <div class="dont-forget-block">
         <a href="" class="img">
@@ -926,7 +927,7 @@
                     <img src="./img/instagram-1.svg" alt="">
                 </a>
             </div>
-
+            <a class="demiweb" href="https://demiweb.pro">Сайт розробили: <div class="img"><img src="./anim/demiweb.svg" alt=""></div></a>
         </div>
     </div>
 </footer>
