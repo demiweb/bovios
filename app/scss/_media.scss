@@ -2120,7 +2120,20 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
   }
 }
 
-
+@media screen and (min-width: 769px) {
+  .pro-im-slider {
+    .button-slide {
+      opacity: 0;
+      transition: opacity 0.3s ease, background-color 0.3s ease;
+    }
+    &:hover {
+      .button-slide {
+        opacity: 1;
+        transition: opacity 0.3s ease, background-color 0.3s ease;
+      }
+    }
+  }
+}
 @media screen and (max-width: 769px) {
 
   .left-review {
