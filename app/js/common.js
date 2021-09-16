@@ -90,7 +90,7 @@ var Visible3 = function (target) {
             // Если элемент полностью видно, то запускаем следующий код
             setTimeout(() => {
                 target.classList.add('anim-start');
-            }, 300)
+            }, 120)
 
 
         } else {

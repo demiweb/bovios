@@ -1296,6 +1296,9 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
     width: 63px;
     height: 63px;
     margin-bottom: 4px;
+    box-shadow: none;
+    border-radius: 50%;
+    transition: box-shadow 0.3s ease;
 
     img {
       width: 100%;
@@ -1313,9 +1316,20 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
     color: #7C8882;
     margin: 0;
     padding: 0;
-
+    transition: color 0.3s ease, font-weight 0.3s ease;
     &::before, &::after {
       content: none;
+    }
+  }
+  &:hover {
+    p {
+      color: #008CB9;
+      font-weight: bold;
+      transition: color 0.3s ease, font-weight 0.3s ease;
+    }
+    .img {
+      box-shadow: 0 0 9px 3px rgba(86, 161, 204, 0.4);
+      transition: box-shadow 0.3s ease;
     }
   }
 }
@@ -5544,7 +5558,12 @@ input[type=number] {
     background: rgba(255, 255, 255, 0);
     border: none;
     border-bottom: 1px solid #C4C4C4;
-
+    box-shadow: none;
+    transition: box-shadow 0.3s ease;
+    &:hover {
+      box-shadow: 0 0 9px 3px rgba(18, 18, 18, 0.12);
+      transition: box-shadow 0.3s ease;
+    }
     &::after {
       position: absolute;
       display: inline-block;
@@ -5557,7 +5576,13 @@ input[type=number] {
       transform: translate(0, 0);
     }
   }
-
+  &.open {
+    span {
+      &::after {
+        transform: translate(0, -75%) rotate(180deg);
+      }
+    }
+  }
   ul {
     z-index: 2;
     position: absolute;
