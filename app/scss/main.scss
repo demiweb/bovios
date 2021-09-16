@@ -3892,6 +3892,9 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
     line-height: 27px;
     color: rgb(0, 140, 185);
     text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   strong {
