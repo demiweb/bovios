@@ -2864,6 +2864,12 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 610px) {
+  .home-dont-forget {
+    display: none;
+    &.visible {
+      display: none;
+    }
+  }
   .company-goal__container .anim {
     width: 100%;
     padding-top: 78%;
@@ -3337,7 +3343,7 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
         font-size: 14px;
         line-height: 18px;
         &::after {
-          font: 14px;
+          font-size: 14px;
           line-height: 18px;
         }
       }
