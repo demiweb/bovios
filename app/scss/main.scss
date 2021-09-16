@@ -3864,6 +3864,14 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
         counter-increment: section;
         content: counter(section) '.';
 
+
+        background: $gradient;
+        font-size: 18px;
+
+        font-weight: 500;
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
   }
@@ -3875,12 +3883,12 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
       position: relative;
 
       &::before {
-        width: 5px;
-        height: 5px;
+        width: 6px;
+        height: 6px;
         top: 9px;
         left: 5px;
         border-radius: 50%;
-        background: #7C8882;
+        background: $gradient;
         display: inline-block;
         position: absolute;
         content: '';
