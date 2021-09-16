@@ -1032,6 +1032,13 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
     order: 4;
   }
 }
+@media screen and (min-width: 1200px) {
+  .phones>a, .header-center>ul li a {
+    padding: 25px 0;
+    margin-top: -25px;
+    margin-bottom: -25px;
+  }
+}
 @media screen and (max-width: 1200px) and (min-width: 780px) {
   .phones>a {
     padding: 20px;
@@ -1080,6 +1087,9 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 
 @media screen and (max-width: 1024px) {
   .product-img > .img {
+    //margin-bottom: 50px;
+  }
+  .pro-im-slider {
     margin-bottom: 50px;
   }
   .product-info {
@@ -1609,6 +1619,7 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
     padding-right: 0;
   }
   .product-img {
+    overflow: visible;
     width: 100%;
     margin-bottom: 20px;
     align-items: center;
@@ -1617,6 +1628,10 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
       width: 60%;
       margin-bottom: 40px;
     }
+  }
+  .pro-im-slider {
+    width: 60%;
+    margin-bottom: 40px;
   }
   .product-img .card-pos__single p {
     font-size: 16px;
@@ -2615,6 +2630,10 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
     line-height: 14px;
   }
   .product-img > .img {
+    //width: 80%;
+
+  }
+  .pro-im-slider {
     width: 80%;
     margin-bottom: 25px;
   }
@@ -2985,6 +3004,9 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
   .product-img > .img {
     width: 100%;
   }
+  .pro-im-slider {
+    width: 100%;
+  }
   .product-line {
     margin-bottom: 18px;
   }
@@ -3171,6 +3193,19 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 525px) {
+  .pro-im-slider {
+    .button-slide {
+      width: 34px;
+      height: 34px;
+      padding: 2px;
+      p {
+        &::after {
+          width: 14px;
+          height: 16px;
+        }
+      }
+    }
+  }
   .demiweb {
     right: 20px;
     bottom: 20px;
