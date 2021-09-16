@@ -2898,6 +2898,9 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 610px) {
+  .prod-tab>div:not(.reviews) {
+    width: 100%;
+  }
   .home-dont-forget {
     display: none;
     &.visible {
