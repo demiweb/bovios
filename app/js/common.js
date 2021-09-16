@@ -657,12 +657,13 @@ function openPopupsOne() {
 openPopupsOne();
 
 let blobHove = [...document.querySelectorAll('.blob')];
+let princImg = [...document.querySelectorAll('.principles__image')];
 
 function hoverBlob() {
     if (!blobHove.length) {
 
     } else {
-        let princImg = [...document.querySelectorAll('.principles__image')];
+
         blobHove.forEach((bl, k) => {
             bl.addEventListener('mouseover', () => {
                 if (bl.classList.contains('active')) {
@@ -679,7 +680,25 @@ function hoverBlob() {
                 }
             });
 
-        })
+        });
+        princImg.forEach((bl, k) => {
+            bl.addEventListener('mouseover', () => {
+                if (bl.classList.contains('active')) {
+
+                } else {
+                    princImg.forEach((blb) => {
+                        blb.classList.remove('active')
+                    });
+                    bl.classList.add('active');
+                    blobHove.forEach((img) => {
+                        img.classList.remove('active');
+                    });
+                    blobHove[k].classList.add('active');
+                }
+            });
+
+        });
+
     }
 }
 
@@ -729,6 +748,7 @@ function openCartModal() {
                 e.preventDefault();
                 document.querySelector('.modal-window__cart').classList.add('open');
                 document.body.classList.add('no-scroll');
+                document.documentElement.classList.add('no-scroll');
             })
         })
     }
@@ -999,4 +1019,23 @@ trustAn.forEach((el, k) => {
         })
     }
 });
+
+
+let systemScrollBtn = [...document.querySelectorAll('.system-text .text span')];
+
+function scrollToSystem() {
+    if (!systemScrollBtn.length) {
+
+    } else {
+        systemScrollBtn.forEach((btn) => {
+            $(btn).click(function() {
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $(".system__global").offset().top
+                }, 400);
+            });
+        })
+    }
+}
+
+scrollToSystem();
 
