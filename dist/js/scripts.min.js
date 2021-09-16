@@ -535,9 +535,9 @@ sortSelectClick();
 $('.rating-stars').raty(
     {
         readOnly:   true,
-        starHalf: '../img/star-clear.svg',
-        starOn: '../img/star.svg',
-        starOff: '..img/star-clear.svg',
+        starHalf: './img/star-clear.svg',
+        starOn: './img/star.svg',
+        starOff: '.img/star-clear.svg',
         hints: ['a', null, '', null, '', null]
     }
 );
