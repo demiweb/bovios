@@ -194,6 +194,8 @@ p, h1, ul, ol, h2, h3, h4, h5, h6 {
     line-height: 1;
     text-transform: uppercase;
     color: #FFFFFF;
+    padding: 4px 16px;
+    box-sizing: border-box;
 
     &:hover {
       background-size: 240%;
