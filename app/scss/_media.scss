@@ -347,6 +347,18 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 1400px) {
+  .product-informer {
+    &__container {
+      .text {
+        span {
+          font-size: 22px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
   .product {
     background:  url("../img/frm-r-t.svg") no-repeat right top/14%, #F3F4F8;
   }
@@ -452,6 +464,18 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 1200px) {
+  .product-informer {
+    &__container {
+      .text {
+        span {
+          font-size: 20px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
   .company-goal__container .anim {
     padding-top: 43%;
   }
@@ -1559,6 +1583,7 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (min-width: 901px) {
+
   .system__global {
     .bov-text__single {
       flex-direction: row-reverse;
@@ -1575,6 +1600,21 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 900px) {
+  .product-informer {
+    &__container {
+      .text {
+        span {
+          font-size: 20px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+      .buttons {
+        flex-shrink: 0;
+      }
+    }
+  }
   .slogan .text .bg {
     z-index: -1;
   }
@@ -2121,6 +2161,7 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (min-width: 769px) {
+
   .pro-im-slider {
     .button-slide {
       opacity: 0.1;
@@ -2135,7 +2176,36 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
   }
 }
 @media screen and (max-width: 769px) {
-
+  .product-informer {
+    &__container {
+      .container {
+        flex-direction: column;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      .text {
+        margin-bottom: 15px;
+        margin-right: 0;
+        width: 100%;
+        span {
+          font-size: 20px;
+        }
+        p {
+          font-size: 16px;
+        }
+      }
+      .buttons {
+        width: 100%;
+        flex-shrink: 0;
+        justify-content: center;
+        .btn {
+          width: 200px;
+          height: 40px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
   .left-review {
     width: 320px;
   }
@@ -2911,6 +2981,42 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 }
 
 @media screen and (max-width: 610px) {
+  .product-informer {
+    &__container {
+      .container {
+        flex-direction: column;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      .text {
+        margin-bottom: 15px;
+        margin-right: 0;
+        width: 100%;
+        span {
+          font-size: 18px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+      .buttons {
+        width: 100%;
+        flex-shrink: 0;
+        flex-direction: column;
+        justify-content: center;
+        .btn {
+          width: 100%;
+          margin-right: 0;
+          margin-bottom: 6px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          height: 40px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
   .prod-tab>div:not(.reviews) {
     width: 100%;
   }

@@ -1066,3 +1066,20 @@ function startImgSlider() {
 }
 startImgSlider();
 
+let btnsInformer = [...document.querySelectorAll('.product-informer__container .buttons .btn')];
+
+
+function closeInformer() {
+    if (!btnsInformer.length) {
+
+    } else {
+        btnsInformer.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                btn.closest('.product-informer').classList.add('hidden');
+            })
+        })
+    }
+}
+
+closeInformer() ;
+
