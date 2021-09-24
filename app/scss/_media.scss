@@ -2162,6 +2162,7 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
 
 @media screen and (min-width: 769px) {
 
+
   .pro-im-slider {
     .button-slide {
       opacity: 0.1;
@@ -2330,7 +2331,8 @@ $gradient: linear-gradient(260.09deg, #008CB9 7.44%, #96BF53 91.11%);
   }
   .phones {
     ul {
-      width: 140%;
+      width: auto;
+      right: -30px;
     }
   }
 }
